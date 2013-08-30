@@ -3,18 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="634260bd-a319-4406-9165-aa1cd128d645" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/EndpointService.js" afterPath="$PROJECT_DIR$/app/scripts/services/EndpointService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/ProjectDetail.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/ProjectDetail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/ProjectService.js" afterPath="$PROJECT_DIR$/app/scripts/services/ProjectService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/main.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projectDetail.html" afterPath="$PROJECT_DIR$/app/views/projectDetail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sapmobile.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/main.html" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377808793822" ignored="false" />
     <file path="/main.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377891564055" ignored="false" />
     <file path="/services.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377885309464" ignored="false" />
-    <file path="/app.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377891478515" ignored="false" />
+    <file path="/app.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377900361548" ignored="false" />
     <file path="/index.html" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377887349765" ignored="false" />
     <file path="/fragment.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377803082459" ignored="false" />
     <file path="/projectDetail.html" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377892870073" ignored="false" />
@@ -23,7 +21,7 @@
     <file path="/a.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377884964912" ignored="false" />
     <file path="/a.html" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377886528271" ignored="false" />
     <file path="/ProjectService.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377891222104" ignored="false" />
-    <file path="/EndpointService.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377891117771" ignored="false" />
+    <file path="/EndpointService.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377900436660" ignored="false" />
     <file path="/statusConstantFilter.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377892824988" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,19 +51,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="statusConstantFilter.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/filters/statusConstantFilter.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ProjectDetail.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/ProjectDetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="27" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
+            <state line="11" column="60" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -74,7 +63,16 @@
       <file leaf-file-name="EndpointService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/services/EndpointService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="0" selection-start="1035" selection-end="1035" vertical-scroll-proportion="0.0">
+            <state line="33" column="13" selection-start="998" selection-end="998" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="71" column="0" selection-start="3725" selection-end="3725" vertical-scroll-proportion="-26.884615">
               <folding />
             </state>
           </provider>
@@ -89,19 +87,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="35" selection-start="270" selection-end="270" vertical-scroll-proportion="0.17366628">
+            <state line="13" column="0" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="91" selection-start="106" selection-end="106" vertical-scroll-proportion="0.0">
+            <state line="19" column="22" selection-start="606" selection-end="606" vertical-scroll-proportion="0.36662883">
               <folding />
             </state>
           </provider>
@@ -132,12 +130,12 @@
         <option value="localhost:9000/scripts/services/services.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/services.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
-        <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/views/projectDetail.html" />
         <option value="$PROJECT_DIR$/app/scripts/filters/statusConstantFilter.js" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/ProjectDetail.js" />
-        <option value="$PROJECT_DIR$/app/scripts/services/EndpointService.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/ProjectService.js" />
+        <option value="$PROJECT_DIR$/app/scripts/app.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/EndpointService.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/ProjectDetail.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/main.js" />
       </list>
     </option>
@@ -459,13 +457,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="0" selection-start="3725" selection-end="3725" vertical-scroll-proportion="0.79298246">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/projectDetail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="12" selection-start="355" selection-end="355" vertical-scroll-proportion="-4.576923">
@@ -480,16 +471,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/ProjectDetail.js">
+    <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="27" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/EndpointService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1035" selection-end="1035" vertical-scroll-proportion="0.0">
+        <state line="71" column="0" selection-start="3725" selection-end="3725" vertical-scroll-proportion="-26.884615">
           <folding />
         </state>
       </provider>
@@ -501,16 +485,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/ProjectDetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="91" selection-start="106" selection-end="106" vertical-scroll-proportion="0.0">
+        <state line="11" column="60" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/EndpointService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="13" selection-start="998" selection-end="998" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="35" selection-start="270" selection-end="270" vertical-scroll-proportion="0.17366628">
+        <state line="13" column="0" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="22" selection-start="606" selection-end="606" vertical-scroll-proportion="0.36662883">
           <folding />
         </state>
       </provider>

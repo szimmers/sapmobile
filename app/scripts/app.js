@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('sapmobileApp', ['sapmobileApp.ProjectService', 'sapmobileApp.EndpointService'])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider/*, Endpoints*/) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -9,7 +9,12 @@ angular.module('sapmobileApp', ['sapmobileApp.ProjectService', 'sapmobileApp.End
       })
       .when('/project/detail/:projectId', {
             templateUrl: 'views/projectDetail.html',
-            controller: 'ProjectDetailCtrl'
+            controller: 'ProjectDetailCtrl',
+			resolve: {
+				endpointsRequired: ['Endpoints', '$q', function(Endpoints, $q) {
+					return Endpoints.resolve($q);
+				}]
+			}
         })
       .otherwise({
         redirectTo: '/'

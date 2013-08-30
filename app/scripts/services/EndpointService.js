@@ -45,6 +45,20 @@ angular.module('sapmobileApp.EndpointService', ['ngResource'])
 				}
 
 				return null;
+			},
+			resolve: function($q) {
+				var deferred = $q.defer();
+
+				if (_endpoints == null) {
+					this.get().then(function(response) {
+						deferred.resolve(response);
+					});
+				}
+				else {
+					deferred.resolve(_endpoints);
+				}
+
+				return deferred.promise;
 			}
 		}
 	});
