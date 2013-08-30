@@ -1,0 +1,10 @@
+<div class="hero-unit">
+  <h1>Projects</h1>
+  <ul>
+      <li ng-repeat="project in projects">
+          <div ng-click="openProjectDetail(project)">
+            {{project.name}}
+          </div>
+      </li>
+  </ul>
+</div>
