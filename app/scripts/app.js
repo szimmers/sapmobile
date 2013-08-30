@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sapmobileApp', ['sapmobileApp.ProjectService'])
+angular.module('sapmobileApp', ['sapmobileApp.ProjectService', 'sapmobileApp.EndpointService'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

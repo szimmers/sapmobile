@@ -1,11 +1,13 @@
 'use strict';
 
 angular.module('sapmobileApp')
-  .controller('MainCtrl', function ($scope, $location, Projects) {
+  .controller('MainCtrl', function ($scope, $location, Projects, Endpoints) {
 
         $scope.projects = Projects.get();
 
         $scope.openProjectDetail = function(project) {
-            $location.path("/project/detail/" + project.uniqueId);
+			$scope.endpoints = Endpoints.get().then(function(){
+				$location.path("/project/detail/" + project.uniqueId);
+			});
         }
   });
