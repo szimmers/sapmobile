@@ -9,6 +9,10 @@ angular.module('sapmobileApp.ProjectService', ['ngResource'])
 		 <add name="Access-Control-Allow-Headers" value="Origin, X-Requested-With, Content-Type,Authorization"/>
 		 */
 	})
+	/**
+	 * service for getting project list and looking up an individual project. project list must be
+	 * loaded first.
+	 */
 	.service('Projects', function($http) {
 		// get stores the projects for later retrieval by id
 		var _projects = null;
@@ -26,7 +30,6 @@ angular.module('sapmobileApp.ProjectService', ['ngResource'])
 				});
 			},
 			getById: function(projectId) {
-				// lookup
 				for (var i=0; i < _projects.length; i++) {
 					var project = _projects[i];
 
@@ -42,6 +45,9 @@ angular.module('sapmobileApp.ProjectService', ['ngResource'])
 			}
 		}
 	})
+	/**
+	 * service for getting tickets related to a project
+	 */
 	.service('ProjectTickets', function($http) {
 		return {
 			get: function(projectId, endpointHost) {

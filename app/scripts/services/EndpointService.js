@@ -1,5 +1,8 @@
 'use strict';
 
+/**
+ * service for getting endpoint data
+ */
 angular.module('sapmobileApp.EndpointService', ['ngResource'])
 	.config(function($httpProvider) {
 		$httpProvider.defaults.headers.common['Authorization'] = 'Basic YWR1bW1lcjp0ZXN0MTIz';
@@ -9,6 +12,10 @@ angular.module('sapmobileApp.EndpointService', ['ngResource'])
 		 <add name="Access-Control-Allow-Headers" value="Origin, X-Requested-With, Content-Type,Authorization"/>
 		 */
 	})
+	/**
+	 * service for getting endpoint list and looking up an individual endpoint. endpoint list must be
+	 * loaded first.
+	 */
 	.service('Endpoints', function ($http) {
 		// get stores the endpoints for later retrieval by id
 		var _endpoints = null;
@@ -26,7 +33,6 @@ angular.module('sapmobileApp.EndpointService', ['ngResource'])
 				});
 			},
 			getById: function(endpointId) {
-				// lookup
 				for (var i=0; i < _endpoints.length; i++) {
 					var endpoint = _endpoints[i];
 
