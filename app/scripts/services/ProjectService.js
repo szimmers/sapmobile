@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sapmobileApp.ProjectService', ['ngResource'])
+angular.module('sapmobileApp.ProjectService', ['ngResource', 'sapmobileApp.EndpointService'])
 	.config(function($httpProvider) {
 		$httpProvider.defaults.headers.common['Authorization'] = 'Basic YWR1bW1lcjp0ZXN0MTIz';
 
