@@ -17,6 +17,19 @@ angular.module('sapmobileApp.ProjectService', ['ngResource'])
 		// get stores the projects for later retrieval by id
 		var _projects = null;
 
+		var _getById = function(projectId) {
+			for (var i=0; i < _projects.length; i++) {
+				var project = _projects[i];
+
+				if (project == null)
+					continue;
+
+				if (project.uniqueId == projectId) {
+					return project;
+				}
+			}
+		}
+
 		return {
 			get: function() {
 				var url = 'http://localhost:85/services/project/';
@@ -30,28 +43,26 @@ angular.module('sapmobileApp.ProjectService', ['ngResource'])
 				});
 			},
 			getById: function(projectId) {
-				for (var i=0; i < _projects.length; i++) {
-					var project = _projects[i];
-
-					if (project == null)
-						continue;
-
-					if (project.uniqueId == projectId) {
-						return project;
-					}
+				if (_projects == null) {
+					this.get().then(function(response) {
+						return _getById(projectId);
+					});
 				}
-
-				return null;
+				else {
+					return _getById(projectId);
+				}
 			}
 		}
 	})
 	/**
 	 * service for getting tickets related to a project
 	 */
-	.service('ProjectTickets', function($http) {
+	.service('ProjectTickets', function($http, Endpoints) {
 		return {
-			get: function(projectId, endpointHost) {
-				var url = 'http://localhost:85/' + endpointHost + '/services/project/' + projectId + '/';
+			get: function(project) {
+				var endpoint = Endpoints.getById(project.endpointId);
+				var endpointHost = endpoint.host;
+				var url = 'http://localhost:85/' + endpointHost + '/services/project/' + project.uniqueId + '/';
 
 				return $http.get(url).then(function(response) {
 					return response.data;
@@ -59,6 +70,19 @@ angular.module('sapmobileApp.ProjectService', ['ngResource'])
 					console.log(response.status);
 					alert(response.status);
 				});
+				/*
+				Endpoints.getById(project.endpointId).then(function(endpoint) {
+					var endpointHost = endpoint.host;
+					var url = 'http://localhost:85/' + endpointHost + '/services/project/' + project.uniqueId + '/';
+
+					return $http.get(url).then(function(response) {
+						return response.data;
+					}, function(response) {
+						console.log(response.status);
+						alert(response.status);
+					});
+				});
+				*/
 			}
 		}
 	});

@@ -20,6 +20,19 @@ angular.module('sapmobileApp.EndpointService', ['ngResource'])
 		// get stores the endpoints for later retrieval by id
 		var _endpoints = null;
 
+		var _getById = function(endpointId) {
+			for (var i=0; i < _endpoints.length; i++) {
+				var endpoint = _endpoints[i];
+
+				if (endpoint == null)
+					continue;
+
+				if (endpoint.uniqueId == endpointId) {
+					return endpoint;
+				}
+			}
+		}
+
 		return {
 			get: function() {
 				var url = 'http://localhost:85/services/endpoint/';
@@ -33,19 +46,15 @@ angular.module('sapmobileApp.EndpointService', ['ngResource'])
 				});
 			},
 			getById: function(endpointId) {
-				for (var i=0; i < _endpoints.length; i++) {
-					var endpoint = _endpoints[i];
-
-					if (endpoint == null)
-						continue;
-
-					if (endpoint.uniqueId == endpointId) {
-						return endpoint;
-					}
+				if (_endpoints == null) {
+					this.get().then(function(response) {
+						return _getById(endpointId);
+					});
 				}
-
-				return null;
-			},
+				else {
+					return _getById(endpointId);
+				}
+			}/*,
 			resolve: function($q) {
 				var deferred = $q.defer();
 
@@ -60,5 +69,6 @@ angular.module('sapmobileApp.EndpointService', ['ngResource'])
 
 				return deferred.promise;
 			}
+			*/
 		}
 	});
