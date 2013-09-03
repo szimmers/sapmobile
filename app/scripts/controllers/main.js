@@ -5,16 +5,8 @@ angular.module('sapmobileApp')
 
         $scope.projects = Projects.get();
 
-        /*
-    $scope.projects = [
-        {name: "Green Onion Slicer", uniqueId:8, type: "rollout"},
-        {name: "Delphi COD", uniqueId:11, type: "rollout"},
-        {name: "Delphi Service", uniqueId:15, type: "serviceContract"}
-    ];
-    */
-
+		// when a project detail is requested, load the detail page using the project id
         $scope.openProjectDetail = function(project) {
-            $location.path("/project/detail/" + project.name + "/" + project.uniqueId);
-            //$location.path("/project/detail/");
+			$location.path("/project/detail/" + project.uniqueId);
         }
   });

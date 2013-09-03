@@ -1,8 +1,11 @@
 'use strict';
 
 angular.module('sapmobileApp')
-  .controller('ProjectDetailCtrl', function ($scope, $routeParams, ProjectTickets) {
-        var project = {name: $routeParams.projectName, uniqueId: $routeParams.uniqueId};
-        $scope.project = project;
-        $scope.tickets = ProjectTickets.get(project.uniqueId);
+/**
+ * When the project detail is requested, use the provided project to load associated data,
+ * including the project tickets.
+ */
+  .controller('ProjectDetailCtrl', function ($scope, $routeParams, project, ProjectTickets ) {
+		$scope.project = project;
+		$scope.tickets = ProjectTickets.get(project);
   });
