@@ -13,13 +13,18 @@ angular.module('sapmobileApp.EndpointService', ['ngResource'])
 		 */
 	})
 	/**
-	 * service for getting endpoint list and looking up an individual endpoint. endpoint list must be
-	 * loaded first.
+	 * service for getting endpoint list and looking up an individual endpoint.
 	 */
-	.service('Endpoints', function ($http) {
+	.service('Endpoints', function ($http, $q) {
 		// get stores the endpoints for later retrieval by id
 		var _endpoints = null;
 
+		/**
+		 * given an id, finds the matching endpoint from the previously loaded endpoints.
+		 * @param endpointId
+		 * @returns {*}
+		 * @private
+		 */
 		var _getById = function(endpointId) {
 			for (var i=0; i < _endpoints.length; i++) {
 				var endpoint = _endpoints[i];
@@ -34,6 +39,10 @@ angular.module('sapmobileApp.EndpointService', ['ngResource'])
 		}
 
 		return {
+			/**
+			 * returns a list of endpoints
+			 * @returns {*}
+			 */
 			get: function() {
 				var url = 'http://localhost:85/services/endpoint/';
 
@@ -45,30 +54,26 @@ angular.module('sapmobileApp.EndpointService', ['ngResource'])
 					alert(response.status);
 				});
 			},
+			/**
+			 * given an id, returns the matching endpoint
+			 * @param endpointId
+			 * @returns {*}
+			 */
 			getById: function(endpointId) {
-				if (_endpoints == null) {
-					this.get().then(function(response) {
-						return _getById(endpointId);
-					});
-				}
-				else {
-					return _getById(endpointId);
-				}
-			}/*,
-			resolve: function($q) {
 				var deferred = $q.defer();
 
 				if (_endpoints == null) {
 					this.get().then(function(response) {
-						deferred.resolve(response);
+						var endpoint = _getById(endpointId);
+						deferred.resolve(endpoint);
 					});
 				}
 				else {
-					deferred.resolve(_endpoints);
+					var endpoint = _getById(endpointId);
+					deferred.resolve(endpoint);
 				}
 
 				return deferred.promise;
 			}
-			*/
 		}
 	});

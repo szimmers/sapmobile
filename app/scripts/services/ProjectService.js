@@ -10,13 +10,18 @@ angular.module('sapmobileApp.ProjectService', ['ngResource'])
 		 */
 	})
 	/**
-	 * service for getting project list and looking up an individual project. project list must be
-	 * loaded first.
+	 * service for getting project list and looking up an individual project.
 	 */
-	.service('Projects', function($http) {
+	.service('Projects', function($http, $q) {
 		// get stores the projects for later retrieval by id
 		var _projects = null;
 
+		/**
+		 * given an id, finds the matching project from the previously loaded projects.
+		 * @param projectId
+		 * @returns {*}
+		 * @private
+		 */
 		var _getById = function(projectId) {
 			for (var i=0; i < _projects.length; i++) {
 				var project = _projects[i];
@@ -31,6 +36,10 @@ angular.module('sapmobileApp.ProjectService', ['ngResource'])
 		}
 
 		return {
+			/**
+			 * returns a list of projects available to the user
+			 * @returns {*}
+			 */
 			get: function() {
 				var url = 'http://localhost:85/services/project/';
 
@@ -42,15 +51,26 @@ angular.module('sapmobileApp.ProjectService', ['ngResource'])
 					alert(response.status);
 				});
 			},
+			/**
+			 * given an id, returns the matching project
+			 * @param projectId
+			 * @returns {*}
+			 */
 			getById: function(projectId) {
+				var deferred = $q.defer();
+
 				if (_projects == null) {
 					this.get().then(function(response) {
-						return _getById(projectId);
+						var project = _getById(projectId);
+						deferred.resolve(project);
 					});
 				}
 				else {
-					return _getById(projectId);
+					var project = _getById(projectId);
+					deferred.resolve(project);
 				}
+
+				return deferred.promise;
 			}
 		}
 	})
@@ -59,19 +79,13 @@ angular.module('sapmobileApp.ProjectService', ['ngResource'])
 	 */
 	.service('ProjectTickets', function($http, Endpoints) {
 		return {
+			/**
+			 * given a project, returns the list of associated tickets
+			 * @param project
+			 * @returns {*}
+			 */
 			get: function(project) {
-				var endpoint = Endpoints.getById(project.endpointId);
-				var endpointHost = endpoint.host;
-				var url = 'http://localhost:85/' + endpointHost + '/services/project/' + project.uniqueId + '/';
-
-				return $http.get(url).then(function(response) {
-					return response.data;
-				}, function(response) {
-					console.log(response.status);
-					alert(response.status);
-				});
-				/*
-				Endpoints.getById(project.endpointId).then(function(endpoint) {
+				return Endpoints.getById(project.endpointId).then(function(endpoint) {
 					var endpointHost = endpoint.host;
 					var url = 'http://localhost:85/' + endpointHost + '/services/project/' + project.uniqueId + '/';
 
@@ -82,7 +96,6 @@ angular.module('sapmobileApp.ProjectService', ['ngResource'])
 						alert(response.status);
 					});
 				});
-				*/
 			}
 		}
 	});

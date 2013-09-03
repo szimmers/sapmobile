@@ -1,14 +1,11 @@
 'use strict';
 
 angular.module('sapmobileApp')
-  .controller('MainCtrl', function ($scope, $location, Projects, Endpoints) {
+  .controller('MainCtrl', function ($scope, $location, Projects) {
 
         $scope.projects = Projects.get();
 
-		/*
-			When a project detail is requested, ensure the endpoints are loaded
-			before loading the view.
-		 */
+		// when a project detail is requested, load the detail page using the project id
         $scope.openProjectDetail = function(project) {
 			$location.path("/project/detail/" + project.uniqueId);
         }

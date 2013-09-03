@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="634260bd-a319-4406-9165-aa1cd128d645" name="Default" comment="">
+      <change type="DELETED" beforePath="E:\devel\misc\angular\sapmobile\app\scripts\services\services.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/EndpointService.js" afterPath="$PROJECT_DIR$/app/scripts/services/EndpointService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/main.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/ProjectDetail.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/ProjectDetail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/ProjectService.js" afterPath="$PROJECT_DIR$/app/scripts/services/ProjectService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sapmobile.iws" />
@@ -12,16 +14,16 @@
     <file path="/main.html" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377808793822" ignored="false" />
     <file path="/main.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377891564055" ignored="false" />
     <file path="/services.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377885309464" ignored="false" />
-    <file path="/app.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377900361548" ignored="false" />
+    <file path="/app.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377902093047" ignored="false" />
     <file path="/index.html" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377887349765" ignored="false" />
     <file path="/fragment.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377803082459" ignored="false" />
     <file path="/projectDetail.html" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377892870073" ignored="false" />
-    <file path="/ProjectDetail.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377891387625" ignored="false" />
-    <file path="/Dummy.txt" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377879663404" ignored="false" />
+    <file path="/ProjectDetail.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1378232153115" ignored="false" />
+    <file path="/Dummy.txt" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1378218947942" ignored="false" />
     <file path="/a.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377884964912" ignored="false" />
     <file path="/a.html" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377886528271" ignored="false" />
-    <file path="/ProjectService.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377891222104" ignored="false" />
-    <file path="/EndpointService.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377900436660" ignored="false" />
+    <file path="/ProjectService.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1378237052632" ignored="false" />
+    <file path="/EndpointService.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1378231477914" ignored="false" />
     <file path="/statusConstantFilter.js" changelist="634260bd-a319-4406-9165-aa1cd128d645" time="1377892824988" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +56,7 @@
       <file leaf-file-name="ProjectDetail.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/ProjectDetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="60" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0">
+            <state line="5" column="32" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -63,16 +65,7 @@
       <file leaf-file-name="EndpointService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/services/EndpointService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="13" selection-start="998" selection-end="998" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="0" selection-start="3725" selection-end="3725" vertical-scroll-proportion="-26.884615">
+            <state line="57" column="56" selection-start="1481" selection-end="1481" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -81,16 +74,7 @@
       <file leaf-file-name="ProjectService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/services/ProjectService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="4" selection-start="1211" selection-end="1211" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0">
+            <state line="82" column="69" selection-start="2042" selection-end="2042" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -99,7 +83,7 @@
       <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="22" selection-start="606" selection-end="606" vertical-scroll-proportion="0.36662883">
+            <state line="2" column="63" selection-start="78" selection-end="78" vertical-scroll-proportion="0.038505096">
               <folding />
             </state>
           </provider>
@@ -129,14 +113,14 @@
         <option value="localhost:9000/scripts/controllers/ProjectDetail.js" />
         <option value="localhost:9000/scripts/services/services.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/services.js" />
-        <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/views/projectDetail.html" />
         <option value="$PROJECT_DIR$/app/scripts/filters/statusConstantFilter.js" />
-        <option value="$PROJECT_DIR$/app/scripts/services/ProjectService.js" />
-        <option value="$PROJECT_DIR$/app/scripts/app.js" />
-        <option value="$PROJECT_DIR$/app/scripts/services/EndpointService.js" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/ProjectDetail.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/main.js" />
+        <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/scripts/services/EndpointService.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/ProjectService.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/ProjectDetail.js" />
+        <option value="$PROJECT_DIR$/app/scripts/app.js" />
       </list>
     </option>
   </component>
@@ -172,7 +156,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -241,24 +224,48 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sapmobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sapmobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="filters" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="recentsLimit" value="5" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../guthub" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -276,14 +283,14 @@
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Remote" singleton="true">
       <JSRemoteDebuggerConfigurationSettings>
-        <option name="engineId" />
+        <option name="engineId" value="embedded" />
         <option name="fileUrl" />
       </JSRemoteDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
       <JSDebuggerConfigurationSettings>
-        <option name="engineId" />
+        <option name="engineId" value="embedded" />
         <option name="fileUrl" />
       </JSDebuggerConfigurationSettings>
       <method />
@@ -334,8 +341,9 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21085925" sideWeight="0.570011" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21085925" sideWeight="0.6710671" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42998898" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -343,11 +351,10 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -416,6 +423,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="67" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="http://localhost:9000/bower_components/angular/angular.js">
       <provider selected="true" editor-type-id="httpFileEditor">
         <state />
@@ -445,14 +459,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="20" selection-start="114" selection-end="114" vertical-scroll-proportion="0.07953216">
+        <state line="4" column="20" selection-start="114" selection-end="114" vertical-scroll-proportion="0.07953216" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/filters/statusConstantFilter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="391" selection-end="391" vertical-scroll-proportion="0.25028312">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/services.js">
+    <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="14" selection-start="718" selection-end="718" vertical-scroll-proportion="0.0">
+        <state line="68" column="0" selection-start="3541" selection-end="3541" vertical-scroll-proportion="0.71295214">
           <folding />
         </state>
       </provider>
@@ -464,51 +488,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/filters/statusConstantFilter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="0" selection-start="3725" selection-end="3725" vertical-scroll-proportion="-26.884615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/ProjectService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="4" selection-start="1211" selection-end="1211" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/ProjectDetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="60" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0">
+        <state line="5" column="32" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/services/EndpointService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="13" selection-start="998" selection-end="998" vertical-scroll-proportion="0.0">
+        <state line="57" column="56" selection-start="1481" selection-end="1481" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/ProjectService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0">
+        <state line="82" column="69" selection-start="2042" selection-end="2042" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="22" selection-start="606" selection-end="606" vertical-scroll-proportion="0.36662883">
+        <state line="2" column="63" selection-start="78" selection-end="78" vertical-scroll-proportion="0.038505096">
           <folding />
         </state>
       </provider>
