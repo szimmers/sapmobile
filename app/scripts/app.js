@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sapmobileApp', ['sapmobileApp.ProjectService'])
+angular.module('sapmobileApp', ['sapmobileApp.ProjectService', 'sapmobileApp.SiteService'])
 	.config(function($httpProvider) {
 		$httpProvider.defaults.headers.common['Authorization'] = 'Basic YWR1bW1lcjp0ZXN0MTIz';
 		delete $httpProvider.defaults.headers.common["X-Requested-With"];
@@ -18,6 +18,17 @@ angular.module('sapmobileApp', ['sapmobileApp.ProjectService'])
 					project: ['Projects', '$route', function(Projects, $route){
 						var projectId = $route.current.params.projectId;
 						return Projects.getById(projectId);
+					}]
+				}
+			})
+			.when('/site/detail/brand/:brandKey/site/:siteIdentifier', {
+				templateUrl: 'views/siteDetail.html',
+				controller: 'SiteDetailCtrl',
+				resolve: {
+					site: ['Site', '$route', function(Site, $route){
+						var brandKey = $route.current.params.brandKey;
+						var siteIdentifier = $route.current.params.siteIdentifier;
+						return Site.get(brandKey, siteIdentifier);
 					}]
 				}
 			})
