@@ -6,8 +6,4 @@ angular.module('sapmobileApp')
  */
 	.controller('SiteDetailCtrl', function ($scope, site) {
 		$scope.site = site;
-
-		$scope.goBack = function() {
-			window.history.back();
-		}
 	});
