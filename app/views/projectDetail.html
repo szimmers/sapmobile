@@ -7,7 +7,9 @@
 
 	<ul>
 		<li class="bullet-less" ng-repeat="ticket in tickets">
-			<span class="label label-info">{{ticket.site.brandKey}}-{{ ticket.site.siteIdentifier }}</span>
+			<span class="btn btn-primary" ng-click="openSiteDetail(ticket.site.brandKey, ticket.site.siteIdentifier)">
+				{{ticket.site.brandKey}}-{{ ticket.site.siteIdentifier }}
+			</span>
 			<span class="label">{{ticket.siteWorkItem.status | statusConstantFilter}}</span>
 			<span class="address">{{ticket.site.address1}} </span>
 			<span class="address city">{{ticket.site.city}}, {{ticket.site.state}} </span>

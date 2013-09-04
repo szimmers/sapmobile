@@ -15,3 +15,11 @@ body {
 .address.city {
     font-weight: bold;
 }
+
+.siteDetailsKey {
+    font-size: medium;
+}
+
+.siteDetailsValue {
+    font-size: medium;
+}
