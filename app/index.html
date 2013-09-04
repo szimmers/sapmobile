@@ -29,15 +29,17 @@
 	<script src="bower_components/jquery/jquery.js"></script>
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/angular-strap/angular-strap.js"></script>
+	<script src="bower_components/crypto/core.js"></script>
+	<script src="bower_components/crypto/enc-base64.js"></script>
 
 	<div class="navbar" bs-navbar>
 		<div class="navbar-inner">
-			<a class="brand" href="#">SAP Mobile</a>
+			<a class="brand" >SAP Mobile</a>
 			<ul class="nav">
-				<li class="active"><a href="#">Project List</a></li>
+				<li class="active" data-access-level='accessLevels.user' ><a href="#">Project List</a></li>
 			</ul>
 			<ul class="nav pull-right">
-				<li><a href="#/logout">Logout</a></li>
+				<li data-access-level='accessLevels.user' ><a href="#/logout">Logout</a></li>
 			</ul>
 		</div>
 	</div>
@@ -79,6 +81,7 @@
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+		<script src="scripts/services/AuthService.js"></script>
 		<script src="scripts/services/ProjectService.js"></script>
 		<script src="scripts/services/EndpointService.js"></script>
         <script src="scripts/app.js"></script>
@@ -87,6 +90,7 @@
         <script src="scripts/filters/statusConstantFilter.js"></script>
         <script src="scripts/controllers/SiteDetail.js"></script>
         <script src="scripts/services/SiteService.js"></script>
+        <script src="scripts/controllers/Login.js"></script>
         <!-- endbuild -->
 </body>
 </html>
