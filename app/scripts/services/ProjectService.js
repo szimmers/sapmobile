@@ -78,7 +78,12 @@ angular.module('sapmobileApp.ProjectService', ['ngResource', 'sapmobileApp.Endpo
 			 */
 			get: function(project) {
 				return Endpoints.getById(project.endpointId).then(function(endpoint) {
-					var endpointHost = endpoint.host;
+					var endpointHost = 'endpoint_undefined';
+
+					if (endpoint != null) {
+						endpointHost = endpoint.host;
+					}
+
 					var url = 'http://localhost:85/' + endpointHost + '/services/project/' + project.uniqueId + '/';
 
 					return $http.get(url).then(function(response) {

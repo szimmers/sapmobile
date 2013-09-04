@@ -1,8 +1,7 @@
 'use strict';
 
-angular.module('sapmobileApp', ['$strap.directives', 'sapmobileApp.ProjectService', 'sapmobileApp.SiteService'])
+angular.module('sapmobileApp', ['$strap.directives', 'sapmobileApp.AuthService', 'sapmobileApp.ProjectService', 'sapmobileApp.SiteService'])
 	.config(function($httpProvider) {
-		$httpProvider.defaults.headers.common['Authorization'] = 'Basic YWR1bW1lcjp0ZXN0MTIz';
 		delete $httpProvider.defaults.headers.common["X-Requested-With"];
 	})
 	.config(function ($routeProvider) {
@@ -32,7 +31,29 @@ angular.module('sapmobileApp', ['$strap.directives', 'sapmobileApp.ProjectServic
 					}]
 				}
 			})
+			.when('/login', {
+				templateUrl: 'views/login.html',
+				controller: 'LoginCtrl'
+			})
+			.when('/logout', {
+				templateUrl: 'views/login.html',
+				controller: 'LoginCtrl',
+				resolve: {
+					logout: ['Auth', function(Auth) {
+						return Auth.logout();
+					}]
+				}
+			})
 			.otherwise({
 				redirectTo: '/'
 			});
-	});
+	})
+	.run(['$rootScope', '$location', 'Auth', function ($rootScope, $location, Auth) {
+
+		$rootScope.$on("$routeChangeStart", function (event, next, current) {
+			if(!Auth.isLoggedIn()) {
+				$location.path('/login');
+			}
+		});
+
+	}]);
