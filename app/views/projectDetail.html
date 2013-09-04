@@ -1,15 +1,28 @@
 <div class="hero-unit">
-	<a class="btn btn-primary" ng-href="/">Back to projects</a>
-
 	<div class="page-header">
 		<h2>{{project.name}} Detail</h2>
 	</div>
 
 	<ul>
 		<li class="bullet-less" ng-repeat="ticket in tickets">
-			<span class="btn btn-primary" ng-click="openSiteDetail(ticket.site.brandKey, ticket.site.siteIdentifier)">
-				{{ticket.site.brandKey}}-{{ ticket.site.siteIdentifier }}
+			<span ng-switch on="ticket.siteWorkItem.status">
+				<span ng-switch-when="1">
+					<span class="btn btn-danger" ng-click="openSiteDetail(ticket.site.brandKey, ticket.site.siteIdentifier)" >
+						{{ticket.site.brandKey}}-{{ ticket.site.siteIdentifier }}
+					</span>
+				</span>
+				<span ng-switch-when="3">
+					<span class="btn btn-success" ng-click="openSiteDetail(ticket.site.brandKey, ticket.site.siteIdentifier)" >
+						{{ticket.site.brandKey}}-{{ ticket.site.siteIdentifier }}
+					</span>
+				</span>
+				<span ng-switch-default>
+					<span class="btn btn-warning" ng-click="openSiteDetail(ticket.site.brandKey, ticket.site.siteIdentifier)" >
+						{{ticket.site.brandKey}}-{{ ticket.site.siteIdentifier }}
+					</span>
+				</span>
 			</span>
+
 			<span class="label">{{ticket.siteWorkItem.status | statusConstantFilter}}</span>
 			<span class="address">{{ticket.site.address1}} </span>
 			<span class="address city">{{ticket.site.city}}, {{ticket.site.state}} </span>

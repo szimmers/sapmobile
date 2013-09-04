@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sapmobileApp', ['sapmobileApp.ProjectService', 'sapmobileApp.SiteService'])
+angular.module('sapmobileApp', ['$strap.directives', 'sapmobileApp.ProjectService', 'sapmobileApp.SiteService'])
 	.config(function($httpProvider) {
 		$httpProvider.defaults.headers.common['Authorization'] = 'Basic YWR1bW1lcjp0ZXN0MTIz';
 		delete $httpProvider.defaults.headers.common["X-Requested-With"];
