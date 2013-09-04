@@ -51,7 +51,7 @@ angular.module('sapmobileApp', ['$strap.directives', 'sapmobileApp.AuthService',
 	.run(['$rootScope', '$location', 'Auth', function ($rootScope, $location, Auth) {
 
 		$rootScope.$on("$routeChangeStart", function (event, next, current) {
-			if(!Auth.isLoggedIn()) {
+			if (!Auth.isLoggedIn()) {
 				$location.path('/login');
 			}
 		});
