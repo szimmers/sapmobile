@@ -35,7 +35,7 @@ angular.module('sapmobileApp.AuthService', ['ngResource'])
 	/**
 	 * service for authentication
 	 */
-	.factory('Auth', function ($http) {
+	.factory('Auth', function ($http, $rootScope) {
 		var _currentUser;
 
 		/**
@@ -61,6 +61,13 @@ angular.module('sapmobileApp.AuthService', ['ngResource'])
 			$http.defaults.headers.common['Authorization'] = '';
 		};
 
+		/**
+		 * let the world know when a user logs in or logs out
+		 */
+		var loginStatusChanged = function() {
+			$rootScope.$broadcast('loginStatusChanged');
+		};
+
 		return {
 			/**
 			 * the currently logged in user
@@ -81,8 +88,10 @@ angular.module('sapmobileApp.AuthService', ['ngResource'])
 
 				return $http.get(url).then(function(response) {
 					_currentUser = response.data;
+					loginStatusChanged();
 				}, function(response) {
 					clearUser();
+					loginStatusChanged();
 					console.log(response.status);
 					alert(response.status);
 				});
@@ -101,6 +110,7 @@ angular.module('sapmobileApp.AuthService', ['ngResource'])
 			 */
 			logout: function() {
 				clearUser();
+				loginStatusChanged();
 			}
 		};
 	});
