@@ -1,0 +1,42 @@
+<div class="hero-unit">
+	<a class="btn btn-primary" ng-href="/">Back to projects</a>
+	<a class="btn btn-primary" ng-click="goBack()">Back to project detail</a>
+
+	<div class="page-header">
+		<h2>{{site.brandKey}}-{{site.siteIdentifier}} Detail</h2>
+	</div>
+
+	<form class="well">
+		<table>
+			<tr>
+				<td class="siteDetailsKey">Name:</td>
+				<td class="siteDetailsValue">{{site.brandKey}}-{{site.siteIdentifier}}</td>
+			</tr>
+			<tr>
+				<td class="siteDetailsKey">Address:</td>
+				<td class="siteDetailsValue">{{site.address1}}</td>
+			</tr>
+			<tr>
+				<td class="siteDetailsKey"></td>
+				<td class="siteDetailsValue">{{site.address2}}</td>
+			</tr>
+			<tr>
+				<td class="siteDetailsKey"></td>
+				<td class="siteDetailsValue">{{site.city}}, {{site.state}} {{site.zip}}</td>
+			</tr>
+			<tr>
+				<td class="siteDetailsKey">Email:</td>
+				<td class="siteDetailsValue">{{site.emailAddress}}</td>
+			</tr>
+			<tr>
+				<td class="siteDetailsKey">Store Main Phone:</td>
+				<td class="siteDetailsValue">{{site.primaryPhone}}</td>
+			</tr>
+			<tr>
+				<td class="siteDetailsKey">Alt Phone:</td>
+				<td class="siteDetailsValue">{{site.altPhone}}</td>
+			</tr>
+		</table>
+	</form>
+
+</div>

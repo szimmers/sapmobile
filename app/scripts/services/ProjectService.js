@@ -1,14 +1,6 @@
 'use strict';
 
 angular.module('sapmobileApp.ProjectService', ['ngResource', 'sapmobileApp.EndpointService'])
-	.config(function($httpProvider) {
-		$httpProvider.defaults.headers.common['Authorization'] = 'Basic YWR1bW1lcjp0ZXN0MTIz';
-
-		/*
-		 <add name="Access-Control-Allow-Origin" value="http://localhost:9000"/>
-		 <add name="Access-Control-Allow-Headers" value="Origin, X-Requested-With, Content-Type,Authorization"/>
-		 */
-	})
 	/**
 	 * service for getting project list and looking up an individual project.
 	 */
