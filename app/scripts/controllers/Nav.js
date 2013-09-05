@@ -9,5 +9,9 @@ angular.module('siteTicketPortal')
 
 		$scope.$on('loginStatusChanged', function() {
 			$scope.loggedIn = Auth.isLoggedIn();
+
+			if ($scope.loggedIn) {
+				$scope.user = Auth.getUser();
+			}
 		});
 	});
