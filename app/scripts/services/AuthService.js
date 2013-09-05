@@ -72,7 +72,9 @@ angular.module('siteTicketPortal.AuthService', ['ngResource'])
 			/**
 			 * the currently logged in user
 			 */
-			user: _currentUser,
+			getUser: function() {
+				return _currentUser;
+			},
 
 			/**
 			 * attempts to log in the indicated user. if successful, sets the auth string for the
