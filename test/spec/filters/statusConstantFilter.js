@@ -3,7 +3,7 @@
 describe('Filter: statusConstantFilter', function () {
 
   // load the filter's module
-  beforeEach(module('sapmobileApp'));
+  beforeEach(module('siteTicketPortal'));
 
   // initialize a new instance of the filter before each test
   var statusConstantFilter;

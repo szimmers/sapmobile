@@ -3,7 +3,7 @@
 describe('Service: Auth', function () {
 
   // load the service's module
-  beforeEach(module('sapmobileApp'));
+  beforeEach(module('siteTicketPortal'));
 
   // instantiate service
   var Auth;

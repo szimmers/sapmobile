@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sapmobileApp.ProjectService', ['ngResource', 'sapmobileApp.EndpointService'])
+angular.module('siteTicketPortal.ProjectService', ['ngResource', 'siteTicketPortal.EndpointService'])
 	/**
 	 * service for getting project list and looking up an individual project.
 	 */

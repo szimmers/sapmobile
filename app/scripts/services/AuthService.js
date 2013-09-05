@@ -3,7 +3,7 @@
 /**
  * service for authentication
  */
-angular.module('sapmobileApp.AuthService', ['ngResource'])
+angular.module('siteTicketPortal.AuthService', ['ngResource'])
 	/**
 	 * configure http provider to return to login page if 401 is encountered
 	 */

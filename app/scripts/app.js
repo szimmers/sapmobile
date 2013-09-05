@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sapmobileApp', ['$strap.directives', 'sapmobileApp.AuthService', 'sapmobileApp.ProjectService', 'sapmobileApp.SiteService'])
+angular.module('siteTicketPortal', ['$strap.directives', 'siteTicketPortal.AuthService', 'siteTicketPortal.ProjectService', 'siteTicketPortal.SiteService'])
 	.config(function($httpProvider) {
 		delete $httpProvider.defaults.headers.common["X-Requested-With"];
 	})

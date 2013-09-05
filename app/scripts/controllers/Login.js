@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sapmobileApp')
+angular.module('siteTicketPortal')
 /**
  * When the login page is requested, handle the login action.
  */
