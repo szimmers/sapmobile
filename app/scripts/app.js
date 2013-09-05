@@ -1,6 +1,11 @@
 'use strict';
 
 angular.module('siteTicketPortal', ['$strap.directives', 'siteTicketPortal.AuthService', 'siteTicketPortal.ProjectService', 'siteTicketPortal.SiteService'])
+	// constants
+	.constant('APP_VERSION', 'v0.2')
+	.constant('BASE_URL', 'http://localhost:85')
+
+	// configuration
 	.config(function($httpProvider) {
 		delete $httpProvider.defaults.headers.common["X-Requested-With"];
 	})
@@ -48,6 +53,8 @@ angular.module('siteTicketPortal', ['$strap.directives', 'siteTicketPortal.AuthS
 				redirectTo: '/'
 			});
 	})
+
+	// route change interception for auth
 	.run(['$rootScope', '$location', 'Auth', function ($rootScope, $location, Auth) {
 
 		$rootScope.$on("$routeChangeStart", function (event, next, current) {
