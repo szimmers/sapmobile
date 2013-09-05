@@ -6,11 +6,6 @@
 	<ul>
 		<li class="bullet-less" ng-repeat="ticket in tickets">
 			<span ng-switch on="ticket.siteWorkItem.status">
-				<span ng-switch-when="1">
-					<span class="btn btn-danger" ng-click="openSiteDetail(ticket.site.brandKey, ticket.site.siteIdentifier)" >
-						{{ticket.site.brandKey}}-{{ ticket.site.siteIdentifier }}
-					</span>
-				</span>
 				<span ng-switch-when="3">
 					<span class="btn btn-success" ng-click="openSiteDetail(ticket.site.brandKey, ticket.site.siteIdentifier)" >
 						{{ticket.site.brandKey}}-{{ ticket.site.siteIdentifier }}

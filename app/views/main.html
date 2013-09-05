@@ -5,7 +5,7 @@
   </div>
 
   <ul class="bullet-less">
-      <li ng-repeat="project in projects">
+	  <li ng-repeat="project in projects | filter:hideNewStatus">
           <div ng-click="openProjectDetail(project)">
             <span class="btn btn-primary">
 				{{project.name}}
