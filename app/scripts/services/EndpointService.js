@@ -3,7 +3,7 @@
 /**
  * service for getting endpoint data
  */
-angular.module('sapmobileApp.EndpointService', ['ngResource'])
+angular.module('siteTicketPortal.EndpointService', ['ngResource'])
 	/**
 	 * service for getting endpoint list and looking up an individual endpoint.
 	 */

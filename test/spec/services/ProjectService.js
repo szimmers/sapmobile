@@ -3,7 +3,7 @@
 describe('Service: ProjectService', function () {
 
   // load the service's module
-  beforeEach(module('sapmobileApp'));
+  beforeEach(module('siteTicketPortal'));
 
   // instantiate service
   var ProjectService;

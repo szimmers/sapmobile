@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sapmobileApp')
+angular.module('siteTicketPortal')
 /**
  * When the project detail is requested, use the provided project to load associated data,
  * including the project tickets.

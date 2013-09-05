@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sapmobileApp')
+angular.module('siteTicketPortal')
 	.controller('MainCtrl', function ($scope, $location, Projects) {
 
 		$scope.projects = Projects.get();

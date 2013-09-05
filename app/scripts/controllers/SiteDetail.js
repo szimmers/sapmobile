@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sapmobileApp')
+angular.module('siteTicketPortal')
 /**
  * When the site detail is requested, simply display the data in the provided site.
  */

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sapmobileApp.SiteService', ['ngResource'])
+angular.module('siteTicketPortal.SiteService', ['ngResource'])
 	.service('Site', function ($http, $q) {
 		return {
 			/**
