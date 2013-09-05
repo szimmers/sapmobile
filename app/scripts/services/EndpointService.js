@@ -7,7 +7,7 @@ angular.module('siteTicketPortal.EndpointService', ['ngResource'])
 	/**
 	 * service for getting endpoint list and looking up an individual endpoint.
 	 */
-	.service('Endpoints', function ($http, $q) {
+	.service('Endpoints', function ($http, $q, BASE_URL) {
 		// get stores the endpoints for later retrieval by id
 		var _endpoints = null;
 
@@ -36,7 +36,7 @@ angular.module('siteTicketPortal.EndpointService', ['ngResource'])
 			 * @returns {*}
 			 */
 			get: function() {
-				var url = 'http://localhost:85/services/endpoint/';
+				var url = BASE_URL + '/services/endpoint/';
 
 				return $http.get(url).then(function(response) {
 					_endpoints = response.data;
