@@ -35,7 +35,7 @@ angular.module('siteTicketPortal.AuthService', ['ngResource'])
 	/**
 	 * service for authentication
 	 */
-	.factory('Auth', function ($http, $rootScope) {
+	.factory('Auth', function ($http, $rootScope, BASE_URL) {
 		var _currentUser;
 
 		/**
@@ -86,7 +86,7 @@ angular.module('siteTicketPortal.AuthService', ['ngResource'])
 			login: function(username, password) {
 				$http.defaults.headers.common['Authorization'] = authString(username, password);
 
-				var url = "http://localhost:85/services/user/" + username;
+				var url = BASE_URL + '/services/user/' + username;
 
 				return $http.get(url).then(function(response) {
 					_currentUser = response.data;

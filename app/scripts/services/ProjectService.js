@@ -4,7 +4,7 @@ angular.module('siteTicketPortal.ProjectService', ['ngResource', 'siteTicketPort
 	/**
 	 * service for getting project list and looking up an individual project.
 	 */
-	.service('Projects', function($http, $q) {
+	.service('Projects', function($http, $q, BASE_URL) {
 		// get stores the projects for later retrieval by id
 		var _projects = null;
 
@@ -33,7 +33,7 @@ angular.module('siteTicketPortal.ProjectService', ['ngResource', 'siteTicketPort
 			 * @returns {*}
 			 */
 			get: function() {
-				var url = 'http://localhost:85/services/project/';
+				var url = BASE_URL + '/services/project/';
 
 				return $http.get(url).then(function(response) {
 					_projects = response.data;
@@ -69,7 +69,7 @@ angular.module('siteTicketPortal.ProjectService', ['ngResource', 'siteTicketPort
 	/**
 	 * service for getting tickets related to a project
 	 */
-	.service('ProjectTickets', function($http, Endpoints) {
+	.service('ProjectTickets', function($http, Endpoints, BASE_URL) {
 		return {
 			/**
 			 * given a project, returns the list of associated tickets
@@ -84,7 +84,7 @@ angular.module('siteTicketPortal.ProjectService', ['ngResource', 'siteTicketPort
 						endpointHost = endpoint.host;
 					}
 
-					var url = 'http://localhost:85/' + endpointHost + '/services/project/' + project.uniqueId + '/';
+					var url = BASE_URL + '/' + endpointHost + '/services/project/' + project.uniqueId + '/';
 
 					return $http.get(url).then(function(response) {
 						return response.data;
