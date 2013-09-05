@@ -4,124 +4,124 @@ angular.module('siteTicketPortal')
 /**
  * Filter for converting a status constant into a human-readable string
  */
-  .filter('statusConstantFilter', function () {
+  .filter('statusConstantFilter', ['statusConstants', function (statusConstants) {
 	return function (status) {
 		var display = "";
 
 		switch (status)
 		{
-			case 1:
+			case statusConstants.New:
 				display = "New";
 				break;
-			case 2:
+			case statusConstants.Started:
 				display = "Started";
 				break;
-			case 3:
+			case statusConstants.Completed:
 				display = "Completed";
 				break;
-			case 4:
+			case statusConstants.Installation:
 				display = "Installation";
 				break;
-			case 5:
+			case statusConstants.PreRollout:
 				display = "Pre-Rollout";
 				break;
-			case 6:
+			case statusConstants.Rollout:
 				display = "Rollout";
 				break;
-			case 7:
+			case statusConstants.PostRollout:
 				display = "Post-Rollout";
 				break;
-			case 8:
+			case statusConstants.Survey:
 				display = "Survey";
 				break;
-			case 9:
+			case statusConstants.AwaitingConfirmation:
 				display = "Awaiting Confirmation";
 				break;
-			case 10:
+			case statusConstants.Assigned:
 				display = "Assigned";
 				break;
-			case 11:
+			case statusConstants.Confirmed:
 				display = "Confirmed";
 				break;
-			case 12:
+			case statusConstants.AwaitingReschedule:
 				display = "Awaiting Reschedule";
 				break;
-			case 13:
+			case statusConstants.UnableToConfirm:
 				display = "Unable to Confirm";
 				break;
-			case 14:
+			case statusConstants.OrderShipped:
 				display = "Order Shipped";
 				break;
-			case 15:
+			case statusConstants.Scheduled:
 				display = "Scheduled";
 				break;
-			case 16:
+			case statusConstants.ConfigurationRequired:
 				display = "Configuration Required";
 				break;
-			case 17:
+			case statusConstants.WaitingForGroupAssignment:
 				display = "Waiting for Group Assignment";
 				break;
-			case 18:
+			case statusConstants.WaitingForSurveyorAssignment:
 				display = "Waiting for Surveyor Assignment";
 				break;
-			case 19:
+			case statusConstants.WaitingForInstallerAssignment:
 				display = "Waiting for Installer Assignment";
 				break;
-			case 20:
+			case statusConstants.WaitingForSchedule:
 				display = "Waiting for Schedule";
 				break;
-			case 21:
+			case statusConstants.WaitingForCloseout:
 				display = "Waiting for Closeout";
 				break;
-			case 22:
+			case statusConstants.WaitingForShippingInformation:
 				display = "Waiting for Shipping Information";
 				break;
-			case 23:
+			case statusConstants.WaitingForApprovalComplete:
 				display = "Waiting for Approval Complete";
 				break;
-			case 24:
+			case statusConstants.WaitingForSurveyComplete:
 				display = "Waiting for Survey Complete";
 				break;
-			case 25:
+			case statusConstants.WaitingForInstallationComplete:
 				display = "Waiting for Installation Complete";
 				break;
-			case 33:
+			case statusConstants.AwaitingServiceProviderAssignment:
 				display = "Awaiting Service Provider Assignment";
 				break;
-			case 34:
+			case statusConstants.AwaitingCallCenterAssignment:
 				display = "Awaiting Call Center Assignment";
 				break;
-			case 26:
+			case statusConstants.WaitingForReview:
 				display = "Waiting for Review";
 				break;
-			case 28:
+			case statusConstants.SurveyReviewRejected:
 				display = "Survey Review Rejected";
 				break;
-			case 29:
+			case statusConstants.InstallationReviewRejected:
 				display = "Installation Review Rejected";
 				break;
-			case 30:
+			case statusConstants.InstallationUnnecessary:
 				display = "Installation Unnecessary";
 				break;
-			case 31:
+			case statusConstants.ApprovalInterventionRequired:
 				display = "Approval Intervention Required";
 				break;
-			case 32:
+			case statusConstants.Unscheduled:
 				display = "Unscheduled";
 				break;
-			case 35:
+			case statusConstants.SubmitShippingData:
 				display = "Submit Shipping Data";
 				break;
-			case 36:
+			case statusConstants.WaitingForServiceTicketComplete:
 				display = "Waiting for Service Ticket Complete";
 				break;
-			case 37:
+			case statusConstants.WaitingForFollowupComplete:
 				display = "Waiting for Followup Complete";
 				break;
-			case 38:
+			case statusConstants.CloseoutException:
 				display = "Closeout Exception";
 				break;
-			case 39:
+			case statusConstants.CreateTicketException:
 				display = "Create Ticket Exception";
 				break;
 			case 0:
@@ -131,4 +131,4 @@ angular.module('siteTicketPortal')
 		}
 		return display;
 	};
-  });
+  }]);
