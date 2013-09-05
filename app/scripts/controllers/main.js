@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('siteTicketPortal')
-	.controller('MainCtrl', function ($scope, $location, Projects) {
+	.controller('MainCtrl', function ($scope, $location, Projects, statusConstants) {
 
 		$scope.projects = Projects.get();
 
@@ -12,7 +12,7 @@ angular.module('siteTicketPortal')
 
 		// hide new projects, since we can't access their tickets
 		$scope.hideNewStatus = function (project) {
-			if (project.status == 1)
+			if (project.status == statusConstants.New)
 				return false;
 
 			return true;
