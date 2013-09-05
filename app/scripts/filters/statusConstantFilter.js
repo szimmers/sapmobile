@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sapmobileApp')
+angular.module('siteTicketPortal')
 /**
  * Filter for converting a status constant into a human-readable string
  */

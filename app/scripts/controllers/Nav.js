@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sapmobileApp')
+angular.module('siteTicketPortal')
 /**
  * Provides way to show/hide parts of the nav bar, based on user logged in or not
  */

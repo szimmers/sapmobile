@@ -3,7 +3,7 @@
 describe('Controller: ProjectdetailCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('sapmobileApp'));
+  beforeEach(module('siteTicketPortal'));
 
   var ProjectdetailCtrl,
     scope;

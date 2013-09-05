@@ -3,7 +3,7 @@
 describe('Controller: LoginCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('sapmobileApp'));
+  beforeEach(module('siteTicketPortal'));
 
   var LoginCtrl,
     scope;
