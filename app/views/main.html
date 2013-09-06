@@ -1,13 +1,9 @@
 <div class="hero-unit">
 
-  <div class="page-header">
-	  <h2>Projects</h2>
-  </div>
-
   <ul class="bullet-less">
 	  <li ng-repeat="project in projects | filter:hideNewStatus">
           <div ng-click="openProjectDetail(project)">
-            <span class="btn btn-primary">
+            <span class="btn btn-primary project-name">
 				{{project.name}}
 			</span>
           </div>
