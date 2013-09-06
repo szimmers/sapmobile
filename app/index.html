@@ -15,6 +15,10 @@
         <link rel="stylesheet" href="styles/bootstrap.css">
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
+
+	  <!-- additional fonts -->
+	  <link href='http://fonts.googleapis.com/css?family=News+Cycle:700' rel='stylesheet' type='text/css'>
+
 </head>
   <body ng-app="siteTicketPortal">
     <!--[if lt IE 7]>
@@ -36,9 +40,12 @@
 
 	<div class="navbar" bs-navbar ng-controller="NavCtrl">
 		<div class="navbar-inner">
-			<a class="brand" >Site Ticket Portal</a>
+			<a class="brand" >
+				<img src="images/logo.png" />
+				Site Ticket Portal
+			</a>
 			<ul class="nav">
-				<li class="active" ng-show="loggedIn" ><a href="#">Project List</a></li>
+				<li class="active" ng-show="loggedIn" ><a href="#">Projects</a></li>
 			</ul>
 			<ul class="nav pull-right">
 				<li ng-show="loggedIn" ><a href="#/logout">Logout {{user.userName}} </a></li>

@@ -4,14 +4,38 @@ body {
     color: #333;
 }
 
-input {
-    max-width: 100%;
+/* for titles */
+h2 {
+    font-family: 'Metrophobic', Arial, serif; font-weight: 400;
 }
 
+/* for responsive design on devices */
+input {
+    max-width: 80%;
+}
+
+/* too much default hero padding, reduce it to look less bad on devices */
+.hero-unit.ng-scope {
+    padding: 20px 20px 20px 20px;
+}
+
+.hero-unit.ng-scope ul {
+    margin-left: 5px;
+}
+
+/* get rid of bullets on ng-repeat items */
 .bullet-less {
     list-style-type: none;
 }
 
+/* on the project detail page, make the project buttons the same width as each other */
+.project-name {
+    width: 80%;
+    max-width: 650px;
+    margin-bottom: 10px;
+}
+
+/* on the site detail page, make the form more readable */
 .address {
     font-size: small;
 }
