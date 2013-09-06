@@ -41,8 +41,7 @@ angular.module('siteTicketPortal', ['$strap.directives', 'siteTicketPortal.AuthS
 				controller: 'LoginCtrl'
 			})
 			.when('/logout', {
-				templateUrl: 'views/login.html',
-				controller: 'LoginCtrl',
+				redirectTo: '/login',
 				resolve: {
 					logout: ['Auth', function(Auth) {
 						return Auth.logout();
