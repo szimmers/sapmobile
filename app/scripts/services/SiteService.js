@@ -13,9 +13,6 @@ angular.module('siteTicketPortal.SiteService', ['ngResource'])
 				return $http.get(url).then(function(response) {
 					var site = response.data[0];
 					return site;
-				}, function(response) {
-					console.log(response.status);
-					alert(response.status);
 				});
 			}
 		}
