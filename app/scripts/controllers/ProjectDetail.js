@@ -2,12 +2,10 @@
 
 angular.module('siteTicketPortal')
 /**
- * When the project detail is requested, use the provided project to load associated data,
- * including the project tickets.
+ * When the project detail is requested, use the provided project and tickets (on the scope) to render
+ * the status of each site.
  */
-  .controller('ProjectDetailCtrl', function ($scope, $location, project, ProjectTickets ) {
-		$scope.project = project;
-		$scope.tickets = ProjectTickets.get(project);
+  .controller('ProjectDetailCtrl', function ($scope, $location) {
 
 		// when a site detail is requested, load the detail page
 		$scope.openSiteDetail = function(brandKey, siteIdentifier) {
