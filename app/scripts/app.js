@@ -13,7 +13,12 @@ angular.module('siteTicketPortal', ['$strap.directives', 'siteTicketPortal.AuthS
 		$routeProvider
 			.when('/', {
 				templateUrl: 'views/main.html',
-				controller: 'MainCtrl'
+				controller: 'MainCtrl',
+				resolve: {
+					projects: ['Projects', function(Projects) {
+						return Projects.get();
+					}]
+				}
 			})
 			.when('/project/:projectId', {
 				templateUrl: 'views/project.html',

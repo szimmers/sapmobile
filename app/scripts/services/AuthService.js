@@ -35,7 +35,7 @@ angular.module('siteTicketPortal.AuthService', ['ngResource'])
 	/**
 	 * service for authentication
 	 */
-	.factory('Auth', function ($http, $rootScope, BASE_URL) {
+	.factory('Auth', function ($http, $rootScope, BASE_URL, $q) {
 		var _currentUser;
 
 		/**
@@ -64,8 +64,8 @@ angular.module('siteTicketPortal.AuthService', ['ngResource'])
 		/**
 		 * let the world know when a user logs in or logs out
 		 */
-		var loginStatusChanged = function() {
-			$rootScope.$broadcast('loginStatusChanged');
+		var loginStatusChanged = function(loggedIn, loggedInUser) {
+			$rootScope.$broadcast('loginStatusChanged', loggedIn, loggedInUser);
 		};
 
 		return {
@@ -90,12 +90,10 @@ angular.module('siteTicketPortal.AuthService', ['ngResource'])
 
 				return $http.get(url).then(function(response) {
 					_currentUser = response.data;
-					loginStatusChanged();
+					loginStatusChanged(true, _currentUser);
 				}, function(response) {
 					clearUser();
-					loginStatusChanged();
-					console.log(response.status);
-					alert(response.status);
+					loginStatusChanged(false, null);
 				});
 			},
 
@@ -112,7 +110,11 @@ angular.module('siteTicketPortal.AuthService', ['ngResource'])
 			 */
 			logout: function() {
 				clearUser();
-				loginStatusChanged();
+				loginStatusChanged(false, null);
+
+				var deferred = $q.defer();
+				deferred.resolve(_currentUser);
+				return deferred.promise;
 			}
 		};
 	});

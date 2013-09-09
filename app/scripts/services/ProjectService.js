@@ -38,9 +38,6 @@ angular.module('siteTicketPortal.ProjectService', ['ngResource', 'siteTicketPort
 				return $http.get(url).then(function(response) {
 					_projects = response.data;
 					return _projects;
-				}, function(response) {
-					console.log(response.status);
-					alert(response.status);
 				});
 			},
 			/**
@@ -88,9 +85,6 @@ angular.module('siteTicketPortal.ProjectService', ['ngResource', 'siteTicketPort
 
 					return $http.get(url).then(function(response) {
 						return response.data;
-					}, function(response) {
-						console.log(response.status);
-						alert(response.status);
 					});
 				});
 			}

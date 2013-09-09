@@ -41,9 +41,6 @@ angular.module('siteTicketPortal.EndpointService', ['ngResource'])
 				return $http.get(url).then(function(response) {
 					_endpoints = response.data;
 					return _endpoints;
-				}, function(response) {
-					console.log(response.status);
-					alert(response.status);
 				});
 			},
 			/**
