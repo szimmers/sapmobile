@@ -1,0 +1,13 @@
+<div class="hero-unit">
+	<div class="page-header">
+		<h2>{{project.name}}</h2>
+	</div>
+
+	<div ng-model="tabs.activeTab" bs-tabs>
+		<div ng-repeat="tab in tabs" data-title="{{tab.title}}">
+		</div>
+	</div>
+
+	<div ng-include="tabs[tabs.activeTab].page"></div>
+
+</div>
