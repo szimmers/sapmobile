@@ -7,28 +7,15 @@ angular.module('siteTicketPortal')
  */
   .controller('ProjectOverviewCtrl', function ($scope, $filter) {
 
-		var createHistogramOfStatusData = function(tickets) {
-			var histogram = {};
-
-			for (var i=0; i < tickets.length; i++) {
-
-				var statusVal = tickets[i].siteWorkItem.status;
-
-				if (histogram[statusVal] == undefined) {
-					histogram[statusVal] = {};
-					histogram[statusVal].statusCount = 0;
-				}
-
-				histogram[statusVal].statusCount++;
-			}
-
-			return histogram;
-		};
-
+		/**
+		 * parse the ticket data and return it as chart data
+		 * @param tickets
+		 * @returns {Array}
+		 */
 		var parseTicketsIntoChartData = function(tickets) {
 			var chartData = [];
 
-			var histogram = createHistogramOfStatusData(tickets);
+			var histogram = $filter('statusDataHistogramForSiteTicket')(tickets);
 
 			for (var statusVal in histogram) {
 				var statusCount = histogram[statusVal].statusCount;
@@ -40,21 +27,26 @@ angular.module('siteTicketPortal')
 			return chartData;
 		};
 
+		// create the chart
 		var chart = {
 			"type": "PieChart",
 			"displayed": true,
 			"options": {
+				"backgroundColor": "#eeeeee",
+				"pieHole": 0.3,
+				"chartArea": {
+					"height": "75%"
+				},
 				"legend": {
-					"position": "bottom",
-					"alignment": "start"
+					"position": "bottom"
 				}
 			}
 		};
 
-		//chart.cssStyle = "height:400px; width:100%;";
-
+		// create the chart data from the ticket data
 		var chartData = parseTicketsIntoChartData($scope.tickets);
 
+		// configure the chart with teh chart data
 		chart.data = {"cols": [
 			{ label: "Status", type: "string"},
 			{ label: "Count", type: "number"}
