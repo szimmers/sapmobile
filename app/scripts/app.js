@@ -15,13 +15,25 @@ angular.module('siteTicketPortal', ['$strap.directives', 'siteTicketPortal.AuthS
 				templateUrl: 'views/main.html',
 				controller: 'MainCtrl'
 			})
-			.when('/project/detail/:projectId', {
-				templateUrl: 'views/projectDetail.html',
-				controller: 'ProjectDetailCtrl',
+			.when('/project/:projectId', {
+				templateUrl: 'views/project.html',
+				controller: 'ProjectCtrl',
 				resolve: {
-					project: ['Projects', '$route', function(Projects, $route){
+					project: ['Projects', '$route', function(Projects, $route) {
 						var projectId = $route.current.params.projectId;
 						return Projects.getById(projectId);
+					}],
+					tickets: ['Projects', 'ProjectTickets', '$route', '$q', function(Projects, ProjectTickets, $route, $q) {
+						var projectId = $route.current.params.projectId;
+						var deferred = $q.defer();
+
+						Projects.getById(projectId).then(function(project) {
+							ProjectTickets.get(project).then(function(tickets) {
+								deferred.resolve(tickets);
+							});
+						});
+
+						return deferred.promise;
 					}]
 				}
 			})
@@ -29,7 +41,7 @@ angular.module('siteTicketPortal', ['$strap.directives', 'siteTicketPortal.AuthS
 				templateUrl: 'views/siteDetail.html',
 				controller: 'SiteDetailCtrl',
 				resolve: {
-					site: ['Site', '$route', function(Site, $route){
+					site: ['Site', '$route', function(Site, $route) {
 						var brandKey = $route.current.params.brandKey;
 						var siteIdentifier = $route.current.params.siteIdentifier;
 						return Site.get(brandKey, siteIdentifier);

@@ -7,7 +7,7 @@ angular.module('siteTicketPortal')
 
 		// when a project detail is requested, load the detail page using the project id
 		$scope.openProjectDetail = function(project) {
-			$location.path("/project/detail/" + project.uniqueId);
+			$location.path("/project/" + project.uniqueId);
 		}
 
 		// hide new projects, since we can't access their tickets
