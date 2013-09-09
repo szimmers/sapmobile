@@ -19,7 +19,7 @@ angular.module('siteTicketPortal')
 
 			for (var statusVal in histogram) {
 				var statusCount = histogram[statusVal].statusCount;
-				var statusDescription = $filter('statusConstantFilter')(parseInt(statusVal));
+				var statusDescription = $filter('statusConstantFilter')(parseInt(statusVal, 10));
 				var item = [{v: statusDescription}, {v: statusCount}];
 				chartData.push({ c: item });
 			}

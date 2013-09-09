@@ -2,11 +2,11 @@
 
   <ul class="bullet-less">
 	  <li ng-repeat="project in projects | filter:hideNewStatus">
-          <div ng-click="openProjectDetail(project)">
+          <a ng-href="#/project/{{project.uniqueId}}">
             <span class="btn btn-primary project-name">
 				{{project.name}}
 			</span>
-          </div>
+          </a>
       </li>
   </ul>
 </div>
