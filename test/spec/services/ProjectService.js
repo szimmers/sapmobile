@@ -11,8 +11,5 @@ describe('Service: ProjectService', function () {
     ProjectService = _ProjectService_;
   }));
 
-  it('should do something', function () {
-    expect(!!ProjectService).toBe(true);
-  });
 
 });
