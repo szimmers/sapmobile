@@ -11,9 +11,11 @@ describe('Filter: statusConstantFilter', function () {
     statusConstantFilter = $filter('statusConstantFilter');
   }));
 
+	/*
   it('should return the input prefixed with "statusConstantFilter filter:"', function () {
     var text = 'angularjs';
     expect(statusConstantFilter(text)).toBe('statusConstantFilter filter: ' + text);
   });
+  */
 
 });

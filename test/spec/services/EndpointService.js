@@ -11,8 +11,5 @@ describe('Service: EndpointService', function () {
     EndpointService = _EndpointService_;
   }));
 
-  it('should do something', function () {
-    expect(!!EndpointService).toBe(true);
-  });
 
 });

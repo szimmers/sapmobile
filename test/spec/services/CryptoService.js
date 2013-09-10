@@ -11,8 +11,5 @@ describe('Service: CryptoService', function () {
     CryptoService = _CryptoService_;
   }));
 
-  it('should do something', function () {
-    expect(!!CryptoService).toBe(true);
-  });
 
 });

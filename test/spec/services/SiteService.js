@@ -11,8 +11,5 @@ describe('Service: SiteService', function () {
     SiteService = _SiteService_;
   }));
 
-  it('should do something', function () {
-    expect(!!SiteService).toBe(true);
-  });
 
 });
