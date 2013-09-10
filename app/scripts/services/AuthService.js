@@ -3,7 +3,7 @@
 /**
  * service for authentication
  */
-angular.module('siteTicketPortal.AuthService', ['ngResource'])
+angular.module('siteTicketPortal.AuthService', ['ngResource', 'siteTicketPortal.CryptoService'])
 	/**
 	 * configure http provider to return to login page if 401 is encountered
 	 */
@@ -35,23 +35,8 @@ angular.module('siteTicketPortal.AuthService', ['ngResource'])
 	/**
 	 * service for authentication
 	 */
-	.factory('Auth', function ($http, $rootScope, BASE_URL, $q) {
+	.factory('Auth', function ($http, $rootScope, BASE_URL, $q, Crypto) {
 		var _currentUser;
-
-		/**
-		 * creates an authentication string based on the provided username and password
-		 * @param username
-		 * @param password
-		 * @returns {string}
-		 */
-		var authString = function(username, password) {
-			var mash = username + ":" + password;
-			var wordArray = CryptoJS.enc.Utf8.parse(mash);
-			var encodedStr = CryptoJS.enc.Base64.stringify(wordArray);
-			var authString = "Basic " + encodedStr;
-
-			return authString;
-		};
 
 		/**
 		 * clears out traces of the previously logged-in user
@@ -84,7 +69,7 @@ angular.module('siteTicketPortal.AuthService', ['ngResource'])
 			 * @returns {*}
 			 */
 			login: function(username, password) {
-				$http.defaults.headers.common['Authorization'] = authString(username, password);
+				$http.defaults.headers.common['Authorization'] = Crypto.getAuthString(username, password);
 
 				var url = BASE_URL + '/services/user/' + username;
 
