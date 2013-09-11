@@ -81,6 +81,43 @@ describe('Service: AuthService', function () {
 
 			expect(service.getUser()).toBeTruthy();
 		}));
+
+		it('should dispatch an event saying the login status changed', inject(function () {
+
+			var loginChangedFlag = false;
+			var listener = jasmine.createSpy('loginChangeListener');
+			scope.$on('loginStatusChanged', listener);
+
+			var promise = service.login(username, password).then(function(response) {
+				scope.data = response;
+			});
+
+			$httpBackend.flush();
+			scope.$apply();
+
+			expect(listener).toHaveBeenCalled();
+		}));
+
+		it('should dispatch an event with the login status info', inject(function () {
+
+			var returnedLoggedInFlag;
+			var returnedLoggedInUser;
+
+			scope.$on('loginStatusChanged', function(event, loggedIn, loggedInUser) {
+				returnedLoggedInFlag = loggedIn;
+				returnedLoggedInUser = loggedInUser;
+			});
+
+			var promise = service.login(username, password).then(function(response) {
+				scope.data = response;
+			});
+
+			$httpBackend.flush();
+			scope.$apply();
+
+			expect(returnedLoggedInFlag).toBeTruthy();
+			expect(returnedLoggedInUser).toBeTruthy();
+		}));
 	});
 
 	describe('when i log in incorrectly', function() {
@@ -151,6 +188,43 @@ describe('Service: AuthService', function () {
 
 			expect(service.getUser()).toBeUndefined();
 		}));
+
+		it('should dispatch an event saying the login status changed', inject(function () {
+
+			var loginChangedFlag = false;
+			var listener = jasmine.createSpy('loginChangeListener');
+			scope.$on('loginStatusChanged', listener);
+
+			var promise = service.login(username, password).then(function(response) {
+				scope.data = response;
+			});
+
+			$httpBackend.flush();
+			scope.$apply();
+
+			expect(listener).toHaveBeenCalled();
+		}));
+
+		it('should dispatch an event with the login status info', inject(function () {
+
+			var returnedLoggedInFlag;
+			var returnedLoggedInUser;
+
+			scope.$on('loginStatusChanged', function(event, loggedIn, loggedInUser) {
+				returnedLoggedInFlag = loggedIn;
+				returnedLoggedInUser = loggedInUser;
+			});
+
+			var promise = service.login(username, password).then(function(response) {
+				scope.data = response;
+			});
+
+			$httpBackend.flush();
+			scope.$apply();
+
+			expect(returnedLoggedInFlag).toBeFalsy();
+			expect(returnedLoggedInUser).toBeFalsy();
+		}));
 	});
 
 	describe('when i log out', function() {
@@ -196,6 +270,84 @@ describe('Service: AuthService', function () {
 			scope.$apply();
 
 			expect(service.getUser()).toBeUndefined();
+		}));
+
+		it('should dispatch an event saying the login status changed', inject(function () {
+
+			var loginChangedFlag = false;
+			var listener = jasmine.createSpy('loginChangeListener');
+			scope.$on('loginStatusChanged', listener);
+
+			var promise = service.logout().then(function(response) {
+				scope.data = response;
+			});
+
+			scope.$apply();
+
+			expect(listener).toHaveBeenCalled();
+		}));
+
+		it('should dispatch an event with the login status info', inject(function () {
+
+			var returnedLoggedInFlag;
+			var returnedLoggedInUser;
+
+			scope.$on('loginStatusChanged', function(event, loggedIn, loggedInUser) {
+				returnedLoggedInFlag = loggedIn;
+				returnedLoggedInUser = loggedInUser;
+			});
+
+			var promise = service.logout().then(function(response) {
+				scope.data = response;
+			});
+
+			scope.$apply();
+
+			expect(returnedLoggedInFlag).toBeFalsy();
+			expect(returnedLoggedInUser).toBeFalsy();
+		}));
+	});
+
+	describe('when i am not authorized', function() {
+
+		beforeEach(module('siteTicketPortal'));
+		beforeEach(module('siteTicketPortal.AuthService'));
+
+		afterEach(function() {
+			$httpBackend.verifyNoOutstandingExpectation();
+			$httpBackend.verifyNoOutstandingRequest();
+		});
+
+		var service, $httpBackend, scope, username, password, location;
+
+		beforeEach(inject(function ($injector, $rootScope, BASE_URL, $location) {
+
+			username = 'larry';
+			password = '';
+
+			var url = BASE_URL + '/services/user/' + username;
+
+			scope = $rootScope.$new();
+
+			$httpBackend = $injector.get('$httpBackend');
+			$httpBackend.expectGET(url).respond(401);
+			location = $location;
+
+			service = $injector.get('Auth');
+		}));
+
+		it('should route me back to the login page', inject(function () {
+
+			var promise = service.login(username, password).then(function(response) {
+				scope.data = response;
+			}, function (reason) {
+				scope.data = reason;
+			});
+
+			$httpBackend.flush();
+			scope.$apply();
+
+			expect(location.path()).toBe("/login");
 		}));
 	});
 });
