@@ -17,6 +17,8 @@ module.exports = function(config) {
 		'app/bower_components/angular-strap/dist/angular-strap.js',
 		'app/bower_components/angular-resource/angular-resource.js',
 		'app/bower_components/angular-google-chart/ng-google-chart.js',
+		'app/bower_components/crypto/core.js',
+		'app/bower_components/crypto/enc-base64.js',
       'app/scripts/*.js',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
