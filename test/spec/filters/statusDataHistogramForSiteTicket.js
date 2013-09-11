@@ -1,17 +1,23 @@
 'use strict';
 
-describe('Controller: ProjectOverviewCtrl', function () {
+describe('Filter: statusDataHistogramForSiteTicket', function () {
 
-	// load the controller's module
+	// load the filter's module
 	beforeEach(module('siteTicketPortal'));
 
-	var ProjectOverviewCtrl,
-		scope;
+	// initialize a new instance of the filter before each test
+	var statusDataHistogramForSiteTicket;
+	beforeEach(inject(function ($filter) {
+		statusDataHistogramForSiteTicket = $filter('statusDataHistogramForSiteTicket');
+	}));
 
-	// Initialize the controller and a mock scope
-	beforeEach(inject(function ($controller, $rootScope) {
+	it('should return an empty object for no tickets', function () {
+		var result = statusDataHistogramForSiteTicket(undefined);
+		var count = Object.keys(result).length;
+		expect(count).toBe(0);
+	});
 
-		var project = {"endpointId":2, "name":"Green Onion Slicer", "status":6, "type":"rollout", "uniqueId":1};
+	it('should return a histogram with 3 items for the indicated tickets', function () {
 
 		var tickets = [
 			{"assignedWorkItem":{"assignedUserId":-1, "completed":false, "deleted":false, "endpointId":2, "projectId":8, "purchaseOrderNumber":"111", "scheduledDate":null, "shippingDataReceived":false, "status":20, "type":"installation" },
@@ -27,30 +33,8 @@ describe('Controller: ProjectOverviewCtrl', function () {
 				"siteWorkItem":{"assignedUserId":-1, "completed":false, "deleted":false, "endpointId":2, "projectId":8, "purchaseOrderNumber":"007", "scheduledDate":null, "shippingDataReceived":false, "status":24, "type":"siteRollout" }}
 		];
 
-		$rootScope.project = project;
-		$rootScope.tickets = tickets;
-
-		scope = $rootScope.$new();
-
-		ProjectOverviewCtrl = $controller('ProjectOverviewCtrl', {
-			$scope: scope
-		});
-	}));
-
-	it('should inherit the project from the root scope', function () {
-		expect(scope.project.name).toBe('Green Onion Slicer');
+		var result = statusDataHistogramForSiteTicket(tickets);
+		var count = Object.keys(result).length;
+		expect(count).toBe(3);
 	});
-
-	it('should inherit the tickets from the root scope', function () {
-		expect(scope.tickets.length).toBe(4);
-	});
-
-	it('should have a pie chart', function () {
-		expect(scope.siteTicketStatusChart.type).toBe("PieChart");
-	});
-
-	it('should have a pie chart with 3 sections', function () {
-		expect(scope.siteTicketStatusChart.data.rows.length).toBe(3);
-	});
-
 });
