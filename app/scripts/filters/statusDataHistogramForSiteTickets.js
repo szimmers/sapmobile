@@ -9,6 +9,10 @@ angular.module('siteTicketPortal')
 		return function (tickets) {
 			var histogram = {};
 
+			if (tickets === undefined) {
+				return histogram;
+			}
+
 			for (var i=0; i < tickets.length; i++) {
 
 				var statusVal = tickets[i].siteWorkItem.status;
