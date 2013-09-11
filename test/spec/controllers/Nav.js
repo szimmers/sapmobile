@@ -29,12 +29,12 @@ describe('Controller: NavCtrl', function () {
 			setTimeout(function() {
 				scope.$broadcast('loginStatusChanged', true, {});
 				loginChangedFlag = true;
-			}, 500);
+			}, 200);
 		});
 
 		waitsFor(function() {
 			return loginChangedFlag;
-		}, 'should be completed', 750);
+		}, 'should be completed', 500);
 
 		runs(function() {
 			expect(listener).toHaveBeenCalled();
@@ -50,12 +50,12 @@ describe('Controller: NavCtrl', function () {
 			setTimeout(function() {
 				scope.$broadcast('loginStatusChanged', true, {});
 				loginChangedFlag = true;
-			}, 500);
+			}, 200);
 		});
 
 		waitsFor(function() {
 			return loginChangedFlag;
-		}, 'should be completed', 750);
+		}, 'should be completed', 500);
 
 		runs(function() {
 			expect(scope.loggedIn).toBe(true);
@@ -71,12 +71,12 @@ describe('Controller: NavCtrl', function () {
 			setTimeout(function() {
 				scope.$broadcast('loginStatusChanged', false, null);
 				loginChangedFlag = true;
-			}, 500);
+			}, 200);
 		});
 
 		waitsFor(function() {
 			return loginChangedFlag;
-		}, 'should be completed', 750);
+		}, 'should be completed', 500);
 
 		runs(function() {
 			expect(scope.loggedIn).toBe(false);
@@ -92,12 +92,12 @@ describe('Controller: NavCtrl', function () {
 			setTimeout(function() {
 				scope.$broadcast('loginStatusChanged', true, {"username":"larry"});
 				loginChangedFlag = true;
-			}, 500);
+			}, 200);
 		});
 
 		waitsFor(function() {
 			return loginChangedFlag;
-		}, 'should be completed', 750);
+		}, 'should be completed', 500);
 
 		runs(function() {
 			expect(scope.user.username).toBe("larry");
