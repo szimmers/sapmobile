@@ -77,9 +77,10 @@ angular.module('siteTicketPortal.AuthService', ['ngResource', 'siteTicketPortal.
 					_currentUser = response.data;
 					loginStatusChanged(true, _currentUser);
 					return _currentUser;
-				}, function(response) {
+				}, function(reason) {
 					clearUser();
 					loginStatusChanged(false, null);
+					return reason;
 				});
 			},
 
