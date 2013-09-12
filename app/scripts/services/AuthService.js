@@ -73,15 +73,19 @@ angular.module('siteTicketPortal.AuthService', ['ngResource', 'siteTicketPortal.
 
 				var url = BASE_URL + '/services/user/' + username;
 
-				return $http.get(url).then(function(response) {
+				var deferred = $q.defer();
+
+				$http.get(url).then(function(response) {
 					_currentUser = response.data;
 					loginStatusChanged(true, _currentUser);
-					return _currentUser;
+					deferred.resolve(_currentUser);
 				}, function(reason) {
 					clearUser();
 					loginStatusChanged(false, null);
-					return reason;
+					deferred.reject(reason);
 				});
+
+				return deferred.promise;
 			},
 
 			/**
