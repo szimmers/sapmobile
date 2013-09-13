@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('siteTicketPortal', ['$strap.directives', 'siteTicketPortal.AuthService', 'siteTicketPortal.ProjectService', 'siteTicketPortal.SiteService', 'googlechart'])
+angular.module('siteTicketPortal', ['$strap.directives', 'siteTicketPortal.AuthService', 'siteTicketPortal.ProjectService', 'siteTicketPortal.SiteService', 'siteTicketPortal.directives', 'googlechart'])
 	// constants
 	.constant('APP_VERSION', 'v0.2')
 	.constant('BASE_URL', 'http://localhost:85')
