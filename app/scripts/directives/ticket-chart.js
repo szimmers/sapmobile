@@ -51,7 +51,7 @@ angular.module('siteTicketPortal.directives', [])
 				// create the chart data from the ticket data
 				var chartData = parseTicketsIntoChartData(scope.data);
 
-				// configure the chart with teh chart data
+				// configure the chart with the chart data
 				chart.data = {"cols": [
 					{ label: "Status", type: "string"},
 					{ label: "Count", type: "number"}

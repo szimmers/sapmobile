@@ -3,7 +3,9 @@
 angular.module('siteTicketPortal', ['$strap.directives', 'siteTicketPortal.AuthService', 'siteTicketPortal.ProjectService', 'siteTicketPortal.SiteService', 'siteTicketPortal.directives', 'googlechart'])
 	// constants
 	.constant('APP_VERSION', 'v0.2')
-	.constant('BASE_URL', 'http://localhost:85')
+	//.constant('BASE_URL', 'http://localhost:85')							// local live server
+	//.constant('BASE_URL', 'http://localhost:3000')						// node test server
+	.constant('BASE_URL', 'http://site-ticket-server.herokuapp.com')		// node live server
 
 	// configuration
 	.config(function($httpProvider) {
