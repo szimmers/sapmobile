@@ -31,8 +31,8 @@ angular.module('siteTicketPortal', ['$strap.directives', 'siteTicketPortal.AuthS
 						return Projects.getById(projectId);
 					}],
 					tickets: ['Projects', 'ProjectTickets', '$route', '$q', function(Projects, ProjectTickets, $route, $q) {
-						var projectId = $route.current.params.projectId;
-						var deferred = $q.defer();
+						var projectId = $route.current.params.projectId,
+						deferred = $q.defer();
 
 						Projects.getById(projectId).then(function(project) {
 							ProjectTickets.get(project).then(function(tickets) {
@@ -49,8 +49,9 @@ angular.module('siteTicketPortal', ['$strap.directives', 'siteTicketPortal.AuthS
 				controller: 'SiteDetailCtrl',
 				resolve: {
 					site: ['Site', '$route', function(Site, $route) {
-						var brandKey = $route.current.params.brandKey;
-						var siteIdentifier = $route.current.params.siteIdentifier;
+						var brandKey = $route.current.params.brandKey,
+						siteIdentifier = $route.current.params.siteIdentifier;
+
 						return Site.get(brandKey, siteIdentifier);
 					}]
 				}

@@ -1,6 +1,6 @@
 'use strict';
 
-/**
+ /**
  * constants for status
  */
 angular.module('siteTicketPortal')

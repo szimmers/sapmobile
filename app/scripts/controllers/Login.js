@@ -7,13 +7,13 @@ angular.module('siteTicketPortal')
 	.controller('LoginCtrl', function ($scope, $location, Auth) {
 		$scope.loginUser = function() {
 
-			return Auth.login($scope.username, $scope.password).then(function(result) {
+			return Auth.login($scope.username, $scope.password).then(function() {
 				$location.path('#');
-			}, function(response) {
+			}, function() {
 				$scope.username = '';
 				$scope.password = '';
 
 				$location.path('/login');
 			});
-		}
+		};
 	});

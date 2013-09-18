@@ -18,17 +18,16 @@ angular.module('siteTicketPortal.EndpointService', ['ngResource'])
 		 * @private
 		 */
 		var _getById = function(endpointId) {
-			for (var i=0; i < _endpoints.length; i++) {
-				var endpoint = _endpoints[i];
+			var i, len, endpoint;
 
-				if (endpoint == null)
-					continue;
+			for (i=0, len = _endpoints.length; i < len; i++) {
+				endpoint = _endpoints[i];
 
-				if (endpoint.uniqueId == endpointId) {
+				if ((endpoint !== null) && (endpoint.uniqueId == endpointId)) {
 					return endpoint;
 				}
 			}
-		}
+		};
 
 		return {
 			/**
@@ -49,20 +48,21 @@ angular.module('siteTicketPortal.EndpointService', ['ngResource'])
 			 * @returns {*}
 			 */
 			getById: function(endpointId) {
-				var deferred = $q.defer();
+				var deferred = $q.defer(),
+					endpoint;
 
-				if (_endpoints == null) {
-					this.get().then(function(response) {
-						var endpoint = _getById(endpointId);
+				if (_endpoints === null) {
+					this.get().then(function() {
+						endpoint = _getById(endpointId);
 						deferred.resolve(endpoint);
 					});
 				}
 				else {
-					var endpoint = _getById(endpointId);
+					endpoint = _getById(endpointId);
 					deferred.resolve(endpoint);
 				}
 
 				return deferred.promise;
 			}
-		}
+		};
 	});

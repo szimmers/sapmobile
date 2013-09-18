@@ -7,17 +7,19 @@ angular.module('siteTicketPortal')
  */
 	.filter('statusDataHistogramForSiteTicket', function () {
 		return function (tickets) {
-			var histogram = {};
+			var histogram = {},
+				i, len,
+				statusVal;
 
 			if (tickets === undefined) {
 				return histogram;
 			}
 
-			for (var i=0; i < tickets.length; i++) {
+			for (i=0, len = tickets.length; i < len; i++) {
 
-				var statusVal = tickets[i].siteWorkItem.status;
+				statusVal = tickets[i].siteWorkItem.status;
 
-				if (histogram[statusVal] == undefined) {
+				if (histogram[statusVal] === undefined) {
 					histogram[statusVal] = {};
 					histogram[statusVal].statusCount = 0;
 				}
