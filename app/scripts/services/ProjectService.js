@@ -15,17 +15,17 @@ angular.module('siteTicketPortal.ProjectService', ['ngResource', 'siteTicketPort
 		 * @private
 		 */
 		var _getById = function(projectId) {
-			for (var i=0; i < _projects.length; i++) {
-				var project = _projects[i];
+			var i, len,
+				project;
 
-				if (project == null)
-					continue;
+			for (i=0, len = _projects.length; i < len; i++) {
+				project = _projects[i];
 
-				if (project.uniqueId == projectId) {
+				if ((project !== null) && (project.uniqueId == projectId)) {
 					return project;
 				}
 			}
-		}
+		};
 
 		return {
 			/**
@@ -46,22 +46,23 @@ angular.module('siteTicketPortal.ProjectService', ['ngResource', 'siteTicketPort
 			 * @returns {*}
 			 */
 			getById: function(projectId) {
-				var deferred = $q.defer();
+				var deferred = $q.defer(),
+					project;
 
-				if (_projects == null) {
-					this.get().then(function(response) {
-						var project = _getById(projectId);
+				if (_projects === null) {
+					this.get().then(function() {
+						project = _getById(projectId);
 						deferred.resolve(project);
 					});
 				}
 				else {
-					var project = _getById(projectId);
+					project = _getById(projectId);
 					deferred.resolve(project);
 				}
 
 				return deferred.promise;
 			}
-		}
+		};
 	})
 	/**
 	 * service for getting tickets related to a project
@@ -75,18 +76,19 @@ angular.module('siteTicketPortal.ProjectService', ['ngResource', 'siteTicketPort
 			 */
 			get: function(project) {
 				return Endpoints.getById(project.endpointId).then(function(endpoint) {
-					var endpointHost = 'endpoint_undefined';
+					var endpointHost = 'endpoint_undefined',
+						url;
 
-					if (endpoint != null) {
+					if (endpoint !== null) {
 						endpointHost = endpoint.host;
 					}
 
-					var url = BASE_URL + '/' + endpointHost + '/services/project/' + project.uniqueId + '/';
+					url = BASE_URL + '/' + endpointHost + '/services/project/' + project.uniqueId + '/';
 
 					return $http.get(url).then(function(response) {
 						return response.data;
 					});
 				});
 			}
-		}
+		};
 	});
