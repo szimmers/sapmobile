@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('siteTicketPortal.SiteService', ['ngResource'])
-	.service('Site', function ($http, $q, BASE_URL) {
+	.service('Site', function ($http, BASE_URL) {
 		return {
 			/**
 			 * returns a list of sites available to the user
@@ -15,5 +15,5 @@ angular.module('siteTicketPortal.SiteService', ['ngResource'])
 					return site;
 				});
 			}
-		}
+		};
 	});

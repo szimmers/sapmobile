@@ -124,7 +124,6 @@ angular.module('siteTicketPortal')
 			case statusConstants.CreateTicketException:
 				display = "Create Ticket Exception";
 				break;
-			case 0:
 			default :
 				display = "Unknown";
 				break;

@@ -7,7 +7,7 @@ angular.module('siteTicketPortal.AuthService', ['ngResource', 'siteTicketPortal.
 	/**
 	 * configure http provider to return to login page if 401 is encountered
 	 */
-	.config( function ($routeProvider, $locationProvider, $httpProvider) {
+	.config( function ($httpProvider) {
 
 			var interceptor = ['$location', '$q', function($location, $q) {
 				function success(response) {
@@ -18,16 +18,14 @@ angular.module('siteTicketPortal.AuthService', ['ngResource', 'siteTicketPortal.
 
 					if(response.status === 401) {
 						$location.path('/login');
-						return $q.reject(response);
 					}
-					else {
-						return $q.reject(response);
-					}
+
+					return $q.reject(response);
 				}
 
 				return function(promise) {
 					return promise.then(success, error);
-				}
+				};
 			}];
 
 			$httpProvider.responseInterceptors.push(interceptor);
@@ -43,7 +41,7 @@ angular.module('siteTicketPortal.AuthService', ['ngResource', 'siteTicketPortal.
 		 */
 		var clearUser = function() {
 			_currentUser = undefined;
-			$http.defaults.headers.common['Authorization'] = '';
+			$http.defaults.headers.common.Authorization = '';
 		};
 
 		/**
@@ -69,11 +67,10 @@ angular.module('siteTicketPortal.AuthService', ['ngResource', 'siteTicketPortal.
 			 * @returns {*}
 			 */
 			login: function(username, password) {
-				$http.defaults.headers.common['Authorization'] = Crypto.getAuthString(username, password);
+				$http.defaults.headers.common.Authorization = Crypto.getAuthString(username, password);
 
-				var url = BASE_URL + '/services/user/' + username;
-
-				var deferred = $q.defer();
+				var url = BASE_URL + '/services/user/' + username,
+				deferred = $q.defer();
 
 				$http.get(url).then(function(response) {
 					_currentUser = response.data;

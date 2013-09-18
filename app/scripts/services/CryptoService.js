@@ -14,12 +14,12 @@ angular.module('siteTicketPortal.CryptoService', [])
 			 * @returns {string}
 			 */
 			getAuthString: function(username, password) {
-				var mash = username + ":" + password;
-				var wordArray = CryptoJS.enc.Utf8.parse(mash);
-				var encodedStr = CryptoJS.enc.Base64.stringify(wordArray);
-				var authString = "Basic " + encodedStr;
+				var mash = username + ":" + password,
+				wordArray = CryptoJS.enc.Utf8.parse(mash),
+				encodedStr = CryptoJS.enc.Base64.stringify(wordArray),
+				authString = "Basic " + encodedStr;
 
 				return authString;
 			}
-		}
+		};
 	});

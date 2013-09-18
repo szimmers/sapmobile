@@ -11,29 +11,37 @@ angular.module('siteTicketPortal.directives', [])
 			scope : {
 				data: '='
 			},
-			link: function postLink(scope, element, attrs) {
+			link: function postLink(scope) {
 				/**
 				 * parse the ticket data and return it as chart data
 				 * @param tickets
 				 * @returns {Array}
 				 */
 				var parseTicketsIntoChartData = function(tickets) {
-					var chartData = [];
+					var chartData = [],
+					statusVal,
+					histogram,
+					statusCount,
+					statusDescription,
+					item;
 
-					var histogram = $filter('statusDataHistogramForSiteTicket')(tickets);
+					histogram = $filter('statusDataHistogramForSiteTicket')(tickets);
 
-					for (var statusVal in histogram) {
-						var statusCount = histogram[statusVal].statusCount;
-						var statusDescription = $filter('statusConstantFilter')(parseInt(statusVal, 10));
-						var item = [{v: statusDescription}, {v: statusCount}];
+					for (statusVal in histogram) {
+						statusCount = histogram[statusVal].statusCount;
+						statusDescription = $filter('statusConstantFilter')(parseInt(statusVal, 10));
+						item = [{v: statusDescription}, {v: statusCount}];
+
 						chartData.push({ c: item });
 					}
 
 					return chartData;
 				};
 
+				var chart, chartData;
+
 				// create the chart
-				var chart = {
+				chart = {
 					"type": "PieChart",
 					"displayed": true,
 					"options": {
@@ -49,7 +57,7 @@ angular.module('siteTicketPortal.directives', [])
 				};
 
 				// create the chart data from the ticket data
-				var chartData = parseTicketsIntoChartData(scope.data);
+				chartData = parseTicketsIntoChartData(scope.data);
 
 				// configure the chart with the chart data
 				chart.data = {"cols": [
